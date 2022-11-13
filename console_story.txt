@@ -1,0 +1,141 @@
+Last login: Tue Nov  8 23:03:58 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+MacBook-Air-Edward:~ edwarddidyk$ cd desktop
+MacBook-Air-Edward:desktop edwarddidyk$ mkdir Story
+MacBook-Air-Edward:desktop edwarddidyk$ cd Story
+MacBook-Air-Edward:Story edwarddidyk$ touch chapter1.txt
+MacBook-Air-Edward:Story edwarddidyk$ open chapter1.txt
+MacBook-Air-Edward:Story edwarddidyk$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/edwarddidyk/Desktop/Story/.git/
+MacBook-Air-Edward:Story edwarddidyk$ ls -a
+.		..		.git		chapter1.txt
+MacBook-Air-Edward:Story edwarddidyk$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	chapter1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Air-Edward:Story edwarddidyk$ git add chapter1.txt
+MacBook-Air-Edward:Story edwarddidyk$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   chapter1.txt
+
+MacBook-Air-Edward:Story edwarddidyk$ git commit -m "Comlete Chapter 1"
+[master (root-commit) 87f5cee] Comlete Chapter 1
+ Committer: Edward Didyk <edwarddidyk@MacBook-Air-Edward.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 chapter1.txt
+MacBook-Air-Edward:Story edwarddidyk$ git log
+commit 87f5cee3a054fb03f412b3b062e204038b6e1dd2 (HEAD -> master)
+Author: Edward Didyk <edwarddidyk@MacBook-Air-Edward.local>
+Date:   Sat Nov 12 03:21:04 2022 +0200
+
+    Comlete Chapter 1
+MacBook-Air-Edward:Story edwarddidyk$ touch chapter2.txt
+MacBook-Air-Edward:Story edwarddidyk$ touch chapter3.txt
+MacBook-Air-Edward:Story edwarddidyk$ ls -q
+chapter1.txt	chapter2.txt	chapter3.txt
+MacBook-Air-Edward:Story edwarddidyk$ ls -a
+.		..		.git		chapter1.txt	chapter2.txt	chapter3.txt
+MacBook-Air-Edward:Story edwarddidyk$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	chapter2.txt
+	chapter3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+MacBook-Air-Edward:Story edwarddidyk$ git add .
+MacBook-Air-Edward:Story edwarddidyk$ status
+-bash: status: command not found
+MacBook-Air-Edward:Story edwarddidyk$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   chapter2.txt
+	new file:   chapter3.txt
+
+MacBook-Air-Edward:Story edwarddidyk$ git commit -m "Comlete Chapter 2 and 3"
+[master 3ebf262] Comlete Chapter 2 and 3
+ Committer: Edward Didyk <edwarddidyk@MacBook-Air-Edward.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+)
+ create mode 100644 chapter2.txt
+ create mode 100644 chapter3.txt
+MacBook-Air-Edward:Story edwarddidyk$ git log
+commit 3ebf262dfa7a32edd7f75a593e96eff4f08a2995 (HEAD -> master)
+Author: Edward Didyk <edwarddidyk@MacBook-Air-Edward.local>
+Date:   Sat Nov 12 03:36:22 2022 +0200
+
+    Comlete Chapter 2 and 3
+
+commit 87f5cee3a054fb03f412b3b062e204038b6e1dd2
+Author: Edward Didyk <edwarddidyk@MacBook-Air-Edward.local>
+Date:   Sat Nov 12 03:21:04 2022 +0200
+
+    Comlete Chapter 1
+MacBook-Air-Edward:Story edwarddidyk$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   chapter3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+MacBook-Air-Edward:Story edwarddidyk$ git diff chapter3.txt
+diff --git a/chapter3.txt b/chapter3.txt
+index f1ecd06..16ec8a4 100644
+--- a/chapter3.txt
++++ b/chapter3.txt
+@@ -1 +1 @@
+-Tomorrow will be batter.
+\ No newline at end of file
++jkcdjkbkhdbkhdbkndbndbv
+\ No newline at end of file
+MacBook-Air-Edward:Story edwarddidyk$ git checkout chapter3.txt
+Updated 1 path from the index
